@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KbtCafe by Brew House</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom scrollbar for gallery */
+    .gallery-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    .gallery-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .gallery-scroll::-webkit-scrollbar-thumb {
+      background: #4b5563;
+      border-radius: 4px;
+    }
+    .gallery-scroll::-webkit-scrollbar-thumb:hover {
+      background: #374151;
+    }
+    /* Active nav link style */
+    .nav-link-active {
+      color: #facc15; /* Tailwind's text-yellow-400 */
+      position: relative;
+    }
+    .nav-link-active::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: #facc15;
+      bottom: -5px;
+      left: 0;
+      border-radius: 2px;
+    }
+    /* Overlay effect on cafe area images */
+    .area-image {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
+    .area-image img {
+      transition: transform 0.3s ease;
+    }
+    .area-image:hover img {
+      transform: scale(1.05);
+    }
+    .area-image .overlay {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      width: 100%;
+      color: white;
+      text-align: center;
+      font-weight: 600;
+      padding: 8px 0;
+      font-size: 1rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-yellow-50 via-yellow-100 to-yellow-50 min-h-screen flex flex-col">
+
+  <!-- Header / Navbar -->
+  <header class="bg-yellow-700 text-white shadow sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4 md:px-8">
+      <a href="#home" class="text-3xl font-bold tracking-wide uppercase">KbtCafe <span class="text-yellow-300">by Brew House</span></a>
+      <nav>
+        <ul class="flex space-x-6 text-lg font-semibold">
+          <li><a href="#home" class="nav-link hover:text-yellow-300 nav-link-active">Home</a></li>
+          <li><a href="#cafe-area" class="nav-link hover:text-yellow-300">Cafe Area</a></li>
+          <li><a href="#menu" class="nav-link hover:text-yellow-300">Menu</a></li>
+          <li><a href="#special-menu" class="nav-link hover:text-yellow-300">Special Menu</a></li>
+          <li><a href="#gallery" class="nav-link hover:text-yellow-300">Gallery</a></li>
+          <li><a href="#contact" class="nav-link hover:text-yellow-300">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content area -->
+  <main class="flex-grow container mx-auto p-4 md:p-8 space-y-16" id="main-content">
+    <!-- Home section -->
+    <section id="home" class="text-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-wide">Welcome to <span class="text-yellow-600">KbtCafe</span></h1>
+      <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">Experience the finest coffees, delicious snacks, and cozy ambiance managed by The Brew House. Your perfect place to relax and enjoy.</p>
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b13d65ba-6c03-4053-9de2-c40f4e5ab05d.png" 
+           alt="Cozy cafe interior with wooden furniture, warm lighting, and happy patrons enjoying coffee"
+           class="mx-auto rounded-lg shadow-lg max-w-full h-auto" 
+           onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c15a3430-68ac-4fde-a355-d080c1b8f1eb.png'">
+    </section>
+
+    <!-- Cafe Area section -->
+    <section id="cafe-area">
+      <h2 class="text-4xl font-bold text-yellow-700 mb-8 border-b-4 border-yellow-400 w-fit mx-auto">Cafe Area</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="area-image">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fed5638a-8e45-49a7-b96a-8d25219a20f7.png" alt="Indoor seating area inside cafe with plants, wooden decor, tables and chairs, natural light"
+               loading="lazy" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/78f14a5f-a058-43c7-b6e3-d2618129a4f8.png'">
+          <div class="overlay">Indoor Seating</div>
+        </div>
+        <div class="area-image">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1f75cbc1-7795-4f68-97cc-82246bfec18e.png" alt="Outdoor cafe patio seating with umbrellas, greenery, and comfortable chairs under natural sunlight"
+               loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300?text=Image+not+available'">
+          <div class="overlay">Outdoor Patio</div>
+        </div>
+        <div class="area-image">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c998f41b-62a6-4407-9bee-a787cd9294cb.png" alt="Cozy cafe corner with armchairs, bookshelf filled with books, and warm ambient lighting"
+               loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/400x300?text=Image+not+available'">
+          <div class="overlay">Cozy Corner</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu section -->
+    <section id="menu">
+      <h2 class="text-4xl font-bold text-yellow-700 mb-6 border-b-4 border-yellow-400 w-fit mx-auto">Menu</h2>
+      <div class="overflow-auto max-h-[500px] rounded-lg border border-yellow-300 p-4 bg-yellow-50 shadow-inner">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a28245c3-87b6-4ede-af7c-d13528ec7ae6.png" 
+             alt="Detailed cafe menu with categories iced tea, maggie, sandwiches, bun & breads, affogato, fries, burgers, pasta, snacks, snacks, chinese, pav bhaji and more with prices"
+             class="mx-auto max-w-full h-auto" 
+             loading="lazy" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5d405b47-d9d8-4c9f-a613-2dd55c1cc721.png'">
+      </div>
+    </section>
+
+    <!-- Special Menu section -->
+    <section id="special-menu">
+      <h2 class="text-4xl font-bold text-yellow-700 mb-6 border-b-4 border-yellow-400 w-fit mx-auto">Special Menu</h2>
+      <div class="overflow-auto max-h-[500px] rounded-lg border border-yellow-300 p-4 bg-yellow-50 shadow-inner">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3d85fa88-4d48-4ca3-b168-20d92898bf49.png" 
+             alt="Special menu of the cafe featuring magic 99 rupees menu with various Indian dishes and combo platters"
+             class="mx-auto max-w-full h-auto" 
+             loading="lazy" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/41588479-d5b1-4113-bb3c-7d01f4854c25.png'">
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallery">
+      <h2 class="text-4xl font-bold text-yellow-700 mb-6 border-b-4 border-yellow-400 w-fit mx-auto">Gallery</h2>
+      <div class="gallery-scroll flex gap-6 overflow-x-auto scroll-smooth p-2">
+        <!-- Sample gallery images -->
+        <div class="min-w-[300px] rounded-lg shadow-lg overflow-hidden">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/25e51332-7e44-4b6c-b888-77b8281ab9b8.png" alt="Close-up of a latte coffee cup with artistic foam design in KbtCafe environment" loading="lazy" onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/faf83744-0940-46b6-bcb1-7861a97b9253.png'">
+        </div>
+        <div class="min-w-[300px] rounded-lg shadow-lg overflow-hidden">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c14b3bb-29a6-4a34-93f8-70e0dd341c2c.png" alt="Delicious burger and fries served on a wooden table at KbtCafe" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/300x200?text=Image+Unavailable'">
+        </div>
+        <div class="min-w-[300px] rounded-lg shadow-lg overflow-hidden">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/08f7dbf4-5c9e-479a-800b-5d422bbcf411.png" alt="Warm cozy cafe interior with customers talking and enjoying their food" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/300x200?text=Image+Unavailable'">
+        </div>
+        <div class="min-w-[300px] rounded-lg shadow-lg overflow-hidden">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0eee50ed-0e30-43c8-aeb7-901c73e8d7b8.png" alt="Tall glass of fresh iced tea drink with lemon slices and mint garnish" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/300x200?text=Image+Unavailable'">
+        </div>
+        <div class="min-w-[300px] rounded-lg shadow-lg overflow-hidden">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/98ba9ae3-4d5c-4e5e-8a48-5d38353c994b.png" alt="Cappuccino coffee cup with latte art atop saucer on rustic wooden table" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/300x200?text=Image+Unavailable'">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="max-w-3xl mx-auto bg-yellow-100 rounded-xl p-6 shadow-lg">
+      <h2 class="text-4xl font-bold text-yellow-700 mb-6 border-b-4 border-yellow-400 w-fit mx-auto">Contact</h2>
+      <form id="contact-form" class="space-y-6" novalidate>
+        <div>
+          <label for="name" class="block font-semibold mb-1">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required
+            class="w-full px-4 py-2 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          <p class="text-red-600 text-sm mt-1 hidden" id="error-name">Please enter your name.</p>
+        </div>
+        <div>
+          <label for="email" class="block font-semibold mb-1">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required
+            class="w-full px-4 py-2 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+          <p class="text-red-600 text-sm mt-1 hidden" id="error-email">Please enter a valid email address.</p>
+        </div>
+        <div>
+          <label for="message" class="block font-semibold mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required
+            class="w-full px-4 py-2 rounded border border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+          <p class="text-red-600 text-sm mt-1 hidden" id="error-message">Please enter a message.</p>
+        </div>
+        <div>
+          <button type="submit"
+            class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded font-semibold cursor-pointer transition duration-300 w-full">Send
+            Message</button>
+        </div>
+        <p id="form-status" class="text-green-700 font-semibold text-center mt-2 hidden"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-yellow-700 text-yellow-100 p-6 mt-12">
+    <div class="container mx-auto text-center">
+      <div class="mb-4 text-lg font-semibold">Follow us on social media</div>
+      <div class="flex justify-center space-x-8 text-yellow-50 text-2xl">
+        <a href="https://facebook.com/kbtcafe" target="_blank" rel="noopener" aria-label="Facebook"
+           class="hover:text-yellow-300 transition" title="Facebook">
+          <svg fill="currentColor" class="w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22 12.07C22 6.52 17.52 2 12 2S2 6.52 2 12.07c0 4.95 3.57 9.03 8.23 9.9v-7.01H7.9v-2.89h2.33V9.77c0-2.3 1.37-3.58 3.48-3.58.99 0 2.02.18 2.02.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.7h2.5l-.4 2.9h-2.1v7.01C18.44 21.1 22 17.02 22 12.07z"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/kbtcafe" target="_blank" rel="noopener" aria-label="Twitter"
+           class="hover:text-yellow-300 transition" title="Twitter">
+          <svg fill="currentColor" class="w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M22.46 6c-.77.35-1.5.6-2.28.7a3.92 3.92 0 0 0 1.72-2.13c-.75.45-1.58.76-2.47.94a3.92 3.92 0 0 0-6.7 3.58A11.16 11.16 0 0 1 3.29 5.17a3.86 3.86 0 0 0-.53 1.97c0 1.4.72 2.64 1.82 3.35a3.88 3.88 0 0 1-1.77-.49v.05c0 1.9 1.37 3.5 3.19 3.87a3.9 3.9 0 0 1-1.76.07c.5 1.57 2 2.7 3.76 2.73A7.85 7.85 0 0 1 2 18.18a11.04 11.04 0 0 0 6 1.77c7.21 0 11.15-6 11.15-11.19 0-.17 0-.35-.02-.52A7.9 7.9 0 0 0 22.46 6z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/kbtcafe" target="_blank" rel="noopener" aria-label="Instagram"
+           class="hover:text-yellow-300 transition" title="Instagram">
+          <svg fill="currentColor" class="w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7.25a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5zm0 2a2.75 2.75 0 1 1 0 5.5 2.75 2.75 0 0 1 0-5.5z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/company/kbtcafe" target="_blank" rel="noopener" aria-label="LinkedIn"
+           class="hover:text-yellow-300 transition" title="LinkedIn">
+          <svg fill="currentColor" class="w-7 h-7" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M20.45 20.45h-3.6v-5.33c0-1.27-.02-2.89-1.76-2.89-1.77 0-2.04 1.38-2.04 2.79v5.43h-3.6V9h3.46v1.56h.05a3.8 3.8 0 0 1 3.42-1.88c3.66 0 4.34 2.41 4.34 5.54v6.24zM5.34 7.43a2.07 2.07 0 1 1 0-4.135 2.07 2.07 0 0 1 0 4.135zm-1.8 13.02h3.6V9H3.54v11.45zM22 0H2C.9 0 0 .9 0 2v20c0 1.11.9 2 2 2h20c1.11 0 2-.89 2-2V2c0-1.1-.89-2-2-2z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="mt-6 text-sm">© 2024 KbtCafe by Brew House. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav link active toggle on click and smooth scrolling behavior
+    const navLinks = document.querySelectorAll('nav ul li a.nav-link');
+    const sections = ['home', 'cafe-area', 'menu', 'special-menu', 'gallery', 'contact'].map(id => document.getElementById(id));
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        navLinks.forEach(l => l.classList.remove('nav-link-active'));
+        link.classList.add('nav-link-active');
+      });
+    });
+
+    // Highlight nav link on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + window.innerHeight / 3;
+      for (let i = 0; i < sections.length; i++) {
+        const sec = sections[i];
+        if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+          navLinks.forEach(l => l.classList.remove('nav-link-active'));
+          const active = [...navLinks].find(link => link.getAttribute('href').substring(1) === sec.id);
+          if (active) active.classList.add('nav-link-active');
+          break;
+        }
+      }
+    });
+
+    // Contact form validation & submit simulation
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+
+      const nameInput = form.name;
+      const emailInput = form.email;
+      const messageInput = form.message;
+      const errorName = document.getElementById('error-name');
+      const errorEmail = document.getElementById('error-email');
+      const errorMessage = document.getElementById('error-message');
+      const formStatus = document.getElementById('form-status');
+
+      // Reset errors
+      errorName.classList.add('hidden');
+      errorEmail.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+      formStatus.classList.add('hidden');
+      formStatus.textContent = '';
+
+      // Simple validation
+      if (nameInput.value.trim() === '') {
+        errorName.classList.remove('hidden');
+        valid = false;
+      }
+      if (emailInput.value.trim() === '' || !emailInput.value.includes('@')) {
+        errorEmail.classList.remove('hidden');
+        valid = false;
+      }
+      if (messageInput.value.trim() === '') {
+        errorMessage.classList.remove('hidden');
+        valid = false;
+      }
+      if (!valid) return;
+
+      // Simulate sending form
+      formStatus.textContent = 'Sending your message...';
+      formStatus.classList.remove('hidden');
+      setTimeout(() => {
+        formStatus.textContent = 'Thank you for contacting us! We will get back to you soon.';
+        form.reset();
+      }, 1200);
+    });
+  </script>
+</body>
+</html>
+
